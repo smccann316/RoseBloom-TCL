@@ -7,8 +7,8 @@ namespace RoseBloom.Common.TCL
     /// <summary>
     /// the action that a thought is about or a action that you were doing while thinking a thought
     /// </summary>
-    public class Action
+    public class Action : LookupEntity
     {
-        
+    
     }
 }

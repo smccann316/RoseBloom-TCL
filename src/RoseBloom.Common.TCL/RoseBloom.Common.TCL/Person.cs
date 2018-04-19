@@ -7,7 +7,7 @@ namespace RoseBloom.Common.TCL
     /// <summary>
     /// Represents a person in the system
     /// </summary>
-    public class Person
+    public class Person : Entity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -8,10 +8,10 @@ namespace RoseBloom.Common.TCL
     /// <summary>
     /// a location in the system it could be a location where you thought about the thought or a location that you are thinking about
     /// </summary>
-    public class Location
+    public class Location : LookupEntity
     {
-        public string Name { get; set; }
         public LocationAddress Address { get; set; }
+        
     }
 
     /// <summary>

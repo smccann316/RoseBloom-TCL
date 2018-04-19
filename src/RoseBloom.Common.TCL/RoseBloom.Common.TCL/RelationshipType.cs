@@ -1,7 +1,6 @@
 ﻿namespace RoseBloom.Common.TCL
 {
-    public class RelationshipType
+    public class RelationshipType : LookupEntity
     {
-        public string Name { get; set; }
     }
 }
