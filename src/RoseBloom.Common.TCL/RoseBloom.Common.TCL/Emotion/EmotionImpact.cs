@@ -1,6 +1,7 @@
 ﻿using System.Net;
 
-namespace RoseBloom.Common.TCL
+// ReSharper disable once CheckNamespace
+namespace RoseBloom.Common.TCL.Entities
 {
     /// <summary>
     /// The emotinal 

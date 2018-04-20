@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RoseBloom.Common.TCL
+// ReSharper disable once CheckNamespace
+namespace RoseBloom.Common.TCL.Entities
 {
     /// <summary>
     /// the action that a thought is about or a action that you were doing while thinking a thought

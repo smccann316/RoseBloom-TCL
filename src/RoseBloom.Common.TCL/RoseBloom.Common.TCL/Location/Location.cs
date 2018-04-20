@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 
-namespace RoseBloom.Common.TCL
+// ReSharper disable once CheckNamespace
+namespace RoseBloom.Common.TCL.Entities
 {
     /// <summary>
     /// a location in the system it could be a location where you thought about the thought or a location that you are thinking about

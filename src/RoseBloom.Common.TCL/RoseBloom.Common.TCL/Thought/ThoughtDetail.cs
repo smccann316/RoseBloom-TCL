@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace RoseBloom.Common.TCL
+// ReSharper disable once CheckNamespace
+namespace RoseBloom.Common.TCL.Entities
 {
-    public class SensesThought : Thought
+    public class ThoughtDetail
     {
         public Action ThoughtAction { get; set; }
         public List<Person> ThoughtWith { get; set; }
-        
-
     }
 }
