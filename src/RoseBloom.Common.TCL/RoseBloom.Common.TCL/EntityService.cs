@@ -9,30 +9,54 @@ namespace RoseBloom.Common.TCL
     public class EntityService<T> : IEntityService where T : Entity
     {
         Type IEntityService.EntityType => typeof(T);
-
-        Task<Entity> IEntityService.AddAsync(Entity toAdd)
+        private readonly IEntityRepository<T> _repository;
+        
+        public EntityService(IEntityRepository<T> repo)
         {
-            throw new NotImplementedException();
+            _repository = repo;
         }
 
-        Task<bool> IEntityService.DeleteAsync(string id)
+        protected async Task<T> AddAsync(T toAdd)
         {
-            throw new NotImplementedException();
+           return  await _repository.AddAsync(toAdd);
+
+        }
+        async Task<Entity> IEntityService.AddAsync(Entity toAdd)
+        {
+            return  await AddAsync((T) toAdd);
         }
 
-        Task<List<Entity>> IEntityService.GetAsync()
+       
+        async Task<bool> IEntityService.DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            return await _repository.DeleteAsync(id);
         }
 
-        Task<Entity> IEntityService.GetByIdAsync(string id)
+        protected async Task<IEnumerable<T>> GetAsync()
         {
-            throw new NotImplementedException();
+            return await _repository.GetAsync();
+        }
+        async Task<IEnumerable<Entity>> IEntityService.GetAsync()
+        {
+            return await GetAsync();
         }
 
-        Task<Entity> IEntityService.UpdateAsync(Entity toUpdate)
+        protected async Task<T> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            return await _repository.GetByIdAsync(id);
+        }
+        async Task<Entity> IEntityService.GetByIdAsync(string id)
+        {
+            return await GetByIdAsync(id);
+        }
+
+        protected async Task<T> UpdateAsync(T toUpdate)
+        {
+            return await _repository.UpdateAsync(toUpdate);
+        }
+         async Task<Entity> IEntityService.UpdateAsync(Entity toUpdate)
+        {
+            return await UpdateAsync((T)toUpdate);
         }
     }
 

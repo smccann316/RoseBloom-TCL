@@ -9,7 +9,7 @@ namespace RoseBloom.Common.TCL
     public interface IEntityService
     {
         Type EntityType { get; }
-        Task<List<Entity>> GetAsync();
+        Task<IEnumerable<Entity>> GetAsync();
         Task<Entity> GetByIdAsync(string id);
         Task<Entity> AddAsync(Entity toAdd);
         Task<Entity> UpdateAsync(Entity toUpdate);
