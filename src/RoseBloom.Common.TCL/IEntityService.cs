@@ -15,4 +15,12 @@ namespace RoseBloom.Common.TCL
         Task<Entity> UpdateAsync(Entity toUpdate);
         Task<bool> DeleteAsync(string id);
     }
+
+    public interface IEntityService<T> : IEntityService where T : Entity
+    {
+        new Task<IEnumerable<T>> GetAsync();
+        new Task<T> GetByIdAsync(string id);
+        Task<T> AddAsync(T toAdd);
+        Task<T> UpdateAsync(T toUpdate);
+    }
 }

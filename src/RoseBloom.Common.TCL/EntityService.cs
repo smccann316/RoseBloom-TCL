@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoseBloom.Common.TCL
 {
-    public class EntityService<T> : IEntityService where T : Entity
+    public class EntityService<T> : IEntityService<T> where T : Entity
     {
         Type IEntityService.EntityType => typeof(T);
         private readonly IEntityRepository<T> _repository;
@@ -16,7 +16,7 @@ namespace RoseBloom.Common.TCL
             _repository = repo;
         }
 
-        protected async Task<T> AddAsync(T toAdd)
+        public async Task<T> AddAsync(T toAdd)
         {
            return  await _repository.AddAsync(toAdd);
 
@@ -32,7 +32,7 @@ namespace RoseBloom.Common.TCL
             return await _repository.DeleteAsync(id);
         }
 
-        protected async Task<IEnumerable<T>> GetAsync()
+        public async Task<IEnumerable<T>> GetAsync()
         {
             return await _repository.GetAsync();
         }
@@ -41,7 +41,7 @@ namespace RoseBloom.Common.TCL
             return await GetAsync();
         }
 
-        protected async Task<T> GetByIdAsync(string id)
+        public async Task<T> GetByIdAsync(string id)
         {
             return await _repository.GetByIdAsync(id);
         }
@@ -50,7 +50,7 @@ namespace RoseBloom.Common.TCL
             return await GetByIdAsync(id);
         }
 
-        protected async Task<T> UpdateAsync(T toUpdate)
+        public async Task<T> UpdateAsync(T toUpdate)
         {
             return await _repository.UpdateAsync(toUpdate);
         }
