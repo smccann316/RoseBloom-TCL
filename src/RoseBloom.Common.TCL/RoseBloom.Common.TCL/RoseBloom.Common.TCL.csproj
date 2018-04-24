@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>0.001</Version>
+    <Authors>Steve McCann</Authors>
+    <Product>Rose Bllom</Product>
+    <PackageId>RoseBloom.ThoghtCaptureLibrry.Core</PackageId>
+    <Description>This is the common Library for the Rose Bllom hought Capture Library</Description>
   </PropertyGroup>
 
 </Project>
